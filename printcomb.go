@@ -5,12 +5,14 @@ import "github.com/01-edu/z01"
 func PrintComb() {
 	for i := '0'; i <= '9'; i++ {
 		for j := '0'; j <= '9'; j++ {
-			for y := '0'; y <= '9'; y++ {
-				if i < j && j < y {
+			for k := '0'; k <= '9'; k++ {
+				if i < j && j < k {
 					z01.PrintRune(i)
 					z01.PrintRune(j)
-					z01.PrintRune(y)
-					if !(i == '7' && j == '8' && y == '9') {
+					z01.PrintRune(k)
+
+					// Check if it's the last combination before printing commas and spaces
+					if !(i == '7' && j == '8' && k == '9') {
 						z01.PrintRune(',')
 						z01.PrintRune(' ')
 					}
@@ -18,5 +20,7 @@ func PrintComb() {
 			}
 		}
 	}
-	z01.PrintRune(10)
+	z01.PrintRune('\n')
 }
+
+// 04:08 12/03/2024
